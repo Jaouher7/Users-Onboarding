@@ -10,11 +10,11 @@
 		<version>2.6.3</version> <!-- Update to the latest stable version -->
 	</parent>
 
-	<groupId>com.bezkoder</groupId>
+	<groupId>com.leoni</groupId>
 	<artifactId>Users-Onboarding</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-security-jwt</name>
-	<description>Demo project for Spring Boot Security - JWT</description>
+	<description>project for users onboarding</description>
 	<packaging>war</packaging>
 	<properties>
 		<java.version>17</java.version>
@@ -105,22 +105,13 @@
 			<version>2.0.1.Final</version>
 		</dependency>
 		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>3.0.0</version>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.8.0</version>
 		</dependency>
 
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
-			<version>3.0.0</version>
-		</dependency>
 
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-boot-starter</artifactId>
-			<version>3.0.0</version>
-		</dependency>
+
 	</dependencies>
 
 	<build>

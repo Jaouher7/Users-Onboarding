@@ -79,7 +79,7 @@ public class AuthController {
 
   @PostMapping("/signup")
   public ResponseEntity<?> registerUser(@Valid @ModelAttribute SignupRequest signUpRequest,
-                                        @RequestPart("image") MultipartFile imageFile) {
+                                        @RequestPart(value = "image", required = false) MultipartFile imageFile) {
     if (userRepository.existsByUsername(signUpRequest.getUsername())) {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
     }
@@ -89,14 +89,20 @@ public class AuthController {
     }
 
     try {
-      String fileName = StringUtils.cleanPath(imageFile.getOriginalFilename());
-      Image image = new Image(fileName, imageFile.getBytes());
-      Image savedImage = imageRepository.save(image);
+      Image savedImage = null;
+      if (imageFile != null) {
+        String fileName = StringUtils.cleanPath(imageFile.getOriginalFilename());
+        Image image = new Image(fileName, imageFile.getBytes());
+        savedImage = imageRepository.save(image);
+      }
 
       User user = new User(signUpRequest.getUsername(),
               signUpRequest.getEmail(),
               encoder.encode(signUpRequest.getPassword()));
-      user.setImage(savedImage);
+
+      if (savedImage != null) {
+        user.setImage(savedImage);
+      }
 
       Set<String> strRoles = signUpRequest.getRole();
       Set<Role> roles = new HashSet<>();
@@ -157,7 +163,14 @@ public class AuthController {
               user.setUsername(updatedUser.getUsername());
               user.setEmail(updatedUser.getEmail());
               user.setPassword(encoder.encode(updatedUser.getPassword()));
-              user.setRoles(updatedUser.getRoles());
+
+              // Retrieve roles from the database based on the names provided in the updated user
+              Set<Role> updatedRoles = new HashSet<>();
+              for (Role role : updatedUser.getRoles()) {
+                Optional<Role> existingRole = roleRepository.findByName(role.getName());
+                existingRole.ifPresent(updatedRoles::add);
+              }
+              user.setRoles(updatedRoles);
 
               Image updatedImage = updatedUser.getImage();
               if (updatedImage != null) {

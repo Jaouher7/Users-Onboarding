@@ -6,14 +6,14 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class SpringBootSecurityJwtApplication extends SpringBootServletInitializer {
+public class LeoniUsersOnboardingApplication extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(SpringBootSecurityJwtApplication.class);
+		return application.sources(LeoniUsersOnboardingApplication.class);
 	}
 	public static void main(String[] args) {
-    SpringApplication.run(SpringBootSecurityJwtApplication.class, args);
+    SpringApplication.run(LeoniUsersOnboardingApplication.class, args);
 	}
 
 }
