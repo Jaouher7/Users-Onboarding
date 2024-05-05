@@ -43,6 +43,7 @@ public class DesignService {
             existingDesign.setComponentLoadedToLpDb(newDesignData.getComponentLoadedToLpDb());
             existingDesign.setProductDesignCompleted(newDesignData.getProductDesignCompleted());
             existingDesign.setDesignIndex(newDesignData.getDesignIndex());
+            existingDesign.setStartDate(newDesignData.getStartDate());
             existingDesign.setDrcCompletedStatus(newDesignData.getDrcCompletedStatus());
             existingDesign.setLeadLengthUpdate(newDesignData.getLeadLengthUpdate());
             existingDesign.seteCNsWorkpackageRecieved(newDesignData.geteCNsWorkpackageRecieved());

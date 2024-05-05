@@ -10,10 +10,8 @@ public class Design {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String Plant;
     private String Account;
-
     private String projectName;
     private String designDescription;
     private String usedSystemBeforeMigration;
@@ -25,6 +23,7 @@ public class Design {
     private String componentLoadedToLpDb;
     private Date productDesignCompleted;
     private Integer designIndex;
+    private Date startDate;
     private String drcCompletedStatus;
     private String leadLengthUpdate;
     private String eCNsWorkpackageRecieved;
@@ -34,11 +33,12 @@ public class Design {
     private String designMigrationStatus;
     private String comments;
 
+
     public Design() {
 
     }
 
-    public Design(Long id, String plant, String account, String projectName, String designDescription, String usedSystemBeforeMigration, String designNbr, String countOfLeads, String targetDesignTimeAssigned, Date plannedStartDate, String designImportResponsible, String componentLoadedToLpDb, Date productDesignCompleted, Integer designIndex, String drcCompletedStatus, String leadLengthUpdate, String ECNsWorkpackageRecieved, String processingTvmCompletedStatus, String sBomUploadStatus, String checkedBy, String designMigrationStatus, String comments) {
+    public Design(Long id, String plant, String account, String projectName, String designDescription, String usedSystemBeforeMigration, String designNbr, String countOfLeads, String targetDesignTimeAssigned, Date plannedStartDate, String designImportResponsible, String componentLoadedToLpDb, Date productDesignCompleted, Integer designIndex, Date startDate, String drcCompletedStatus, String leadLengthUpdate, String eCNsWorkpackageRecieved, String processingTvmCompletedStatus, String sBomUploadStatus, String checkedBy, String designMigrationStatus, String comments) {
         this.id = id;
         Plant = plant;
         Account = account;
@@ -53,6 +53,7 @@ public class Design {
         this.componentLoadedToLpDb = componentLoadedToLpDb;
         this.productDesignCompleted = productDesignCompleted;
         this.designIndex = designIndex;
+        this.startDate = startDate;
         this.drcCompletedStatus = drcCompletedStatus;
         this.leadLengthUpdate = leadLengthUpdate;
         this.eCNsWorkpackageRecieved = eCNsWorkpackageRecieved;
@@ -62,8 +63,6 @@ public class Design {
         this.designMigrationStatus = designMigrationStatus;
         this.comments = comments;
     }
-
-
 
     public Long getId() {
         return id;
@@ -145,7 +144,6 @@ public class Design {
         this.plannedStartDate = plannedStartDate;
     }
 
-
     public String getDesignImportResponsible() {
         return designImportResponsible;
     }
@@ -176,6 +174,14 @@ public class Design {
 
     public void setDesignIndex(Integer designIndex) {
         this.designIndex = designIndex;
+    }
+
+    public Date getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
     public String getDrcCompletedStatus() {

@@ -1,12 +1,13 @@
 package com.leoni.controllers;
+
 import com.leoni.models.ERole;
+import com.leoni.models.Image;
 import com.leoni.models.Role;
 import com.leoni.models.User;
 import com.leoni.payload.request.LoginRequest;
 import com.leoni.payload.request.SignupRequest;
 import com.leoni.payload.response.JwtResponse;
 import com.leoni.payload.response.MessageResponse;
-import com.leoni.models.Image;
 import com.leoni.repository.ImageRepository;
 import com.leoni.repository.RoleRepository;
 import com.leoni.repository.UserRepository;
@@ -140,8 +141,6 @@ public class AuthController {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: Failed to upload image!"));
     }
   }
-
-
 
   @GetMapping("/users")
   public ResponseEntity<List<User>> getAllUsers() {

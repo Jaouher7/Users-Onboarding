@@ -1,7 +1,7 @@
 package com.leoni.controllers;
 
-import com.leoni.security.services.DesignService;
 import com.leoni.models.Design;
+import com.leoni.security.services.DesignService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api/designs")
 public class DesignController {
