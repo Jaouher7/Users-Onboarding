@@ -8,6 +8,7 @@ import com.leoni.payload.request.LoginRequest;
 import com.leoni.payload.request.SignupRequest;
 import com.leoni.payload.response.JwtResponse;
 import com.leoni.payload.response.MessageResponse;
+import com.leoni.payload.response.UserResponse;
 import com.leoni.repository.ImageRepository;
 import com.leoni.repository.RoleRepository;
 import com.leoni.repository.UserRepository;
@@ -74,7 +75,7 @@ public class AuthController {
             userDetails.getUsername(),
             userDetails.getEmail(),
             roles,
-            imageData)); // Pass image data to JwtResponse constructor
+            imageData));
   }
 
 
@@ -143,17 +144,51 @@ public class AuthController {
   }
 
   @GetMapping("/users")
-  public ResponseEntity<List<User>> getAllUsers() {
-    List<User> users = userRepository.findAll();
-    return ResponseEntity.ok(users);
+  public ResponseEntity<?> getAllUsers() {
+    List<User> users = userRepository.findAll(); // Assuming you have a UserRepository
+    List<UserResponse> userResponses = users.stream()
+            .map(UserDetailsImpl::build) // Use UserDetailsImpl.build method
+            .map(userDetails -> {
+              List<String> roles = userDetails.getAuthorities().stream()
+                      .map(item -> item.getAuthority())
+                      .collect(Collectors.toList());
+              byte[] imageData = userDetails.getImageData(); // Fetch image data
+              return new UserResponse(
+                      userDetails.getId(),
+                      userDetails.getUsername(),
+                      userDetails.getEmail(),
+                      roles,
+                      imageData
+              );
+            })
+            .collect(Collectors.toList());
+    return ResponseEntity.ok(userResponses);
   }
 
   @GetMapping("/users/{id}")
-  public ResponseEntity<User> getUserById(@PathVariable Long id) {
-    return userRepository.findById(id)
-            .map(ResponseEntity::ok)
-            .orElse(ResponseEntity.notFound().build());
+  public ResponseEntity<?> getUserById(@PathVariable Long id) {
+    Optional<User> userOptional = userRepository.findById(id); // Assuming you have a UserRepository
+    if (userOptional.isPresent()) {
+      UserDetailsImpl userDetails = UserDetailsImpl.build(userOptional.get()); // Use UserDetailsImpl.build method
+      List<String> roles = userDetails.getAuthorities().stream()
+              .map(item -> item.getAuthority())
+              .collect(Collectors.toList());
+      byte[] imageData = userDetails.getImageData(); // Fetch image data
+      UserResponse userResponse = new UserResponse(
+              userDetails.getId(),
+              userDetails.getUsername(),
+              userDetails.getEmail(),
+              roles,
+              imageData
+      );
+      return ResponseEntity.ok(userResponse);
+    } else {
+      return ResponseEntity.notFound().build();
+    }
   }
+
+
+
 
   @PutMapping("/users/{id}")
   public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User updatedUser) {

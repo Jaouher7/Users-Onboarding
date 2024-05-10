@@ -39,7 +39,13 @@ public class User {
   private Set<Role> roles = new HashSet<>();
 
   @OneToOne(fetch = FetchType.LAZY)
+  @JoinTable(  name = "user_image",
+          joinColumns = @JoinColumn(name = "user_id"),
+          inverseJoinColumns = @JoinColumn(name = "image_id"))
   private Image image;
+
+  @Transient
+  private byte[] imageData;
 
   public User(String username, String email, String password) {
     this.username = username;
@@ -97,5 +103,12 @@ public class User {
     this.image = image;
   }
 
+  public byte[] getImageData() {
+    return imageData;
+  }
+
+  public void setImageData(byte[] imageData) {
+    this.imageData = imageData;
+  }
 
 }
