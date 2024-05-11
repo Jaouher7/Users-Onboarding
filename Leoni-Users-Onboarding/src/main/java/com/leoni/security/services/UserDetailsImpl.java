@@ -28,14 +28,17 @@ public class UserDetailsImpl implements UserDetails {
 
   private byte[] imageData; // Add imageData property
 
+  private User user;
+
   public UserDetailsImpl(Long id, String username, String email, String password,
-                         Collection<? extends GrantedAuthority> authorities, byte[] imageData) { // Update constructor
+                         Collection<? extends GrantedAuthority> authorities, byte[] imageData, User user) { // Update constructor
     this.id = id;
     this.username = username;
     this.email = email;
     this.password = password;
     this.authorities = authorities;
     this.imageData = imageData; // Set imageData
+    this.user = user;
   }
   public static UserDetailsImpl build(User user) {
     List<GrantedAuthority> authorities = user.getRoles().stream()
@@ -48,7 +51,8 @@ public class UserDetailsImpl implements UserDetails {
             user.getEmail(),
             user.getPassword(),
             authorities,
-            user.getImage() != null ? user.getImage().getImageData() : null // Set image data if available
+            user.getImage() != null ? user.getImage().getImageData() : null,
+            user
     );
   }
 
@@ -108,6 +112,8 @@ public class UserDetailsImpl implements UserDetails {
   public byte[] getImageData() {
     return imageData;
   }
+
+  public User getUser() {return user;}
 
   public void setImageData(byte[] imageData) {
     this.imageData = imageData;
