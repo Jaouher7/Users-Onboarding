@@ -49,11 +49,11 @@ public class UpdateUserRequest {
         this.password = password;
     }
 
-    public Set<String> getRole() {
+    public Set<String> getRoles() {
         return role;
     }
 
-    public void setRole(Set<String> role) {
+    public void setRoles(Set<String> role) {
         this.role = role;
     }
 

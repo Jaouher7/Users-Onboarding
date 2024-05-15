@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5a410185-eb86-43e0-889f-e0649ad056d3" name="Changes" comment="new version">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/dto/RoleDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UpdateUserRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UserResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/LeoniUsersOnboardingApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/LeoniUsersOnboardingApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/controllers/TaskController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/controllers/TaskController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/dto/TaskDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/dto/TaskDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/models/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/models/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UpdateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UpdateUserRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UserResponse.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -64,6 +60,8 @@
     "HTTP Request.generated-requests | #72.executor": "Run",
     "HTTP Request.generated-requests | #76.executor": "Run",
     "HTTP Request.generated-requests | #77.executor": "Run",
+    "HTTP Request.generated-requests | #84.executor": "Run",
+    "HTTP Request.generated-requests | #87.executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -71,7 +69,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "Spring Boot.LeoniUsersOnboardingApplication.executor": "Run",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "New-Version",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -82,12 +80,6 @@
   }
 }]]></component>
   <component name="RunManager" selected="Spring Boot.LeoniUsersOnboardingApplication">
-    <configuration name="generated-requests | #62" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="62" requestIdentifier="#62" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #71" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="71" requestIdentifier="#71" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="generated-requests | #72" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="72" requestIdentifier="#72" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -95,6 +87,12 @@
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #77" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="77" requestIdentifier="#77" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #84" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="84" requestIdentifier="#84" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #87" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="87" requestIdentifier="#87" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="LeoniUsersOnboardingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -107,11 +105,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #87" />
+        <item itemvalue="HTTP Request.generated-requests | #84" />
         <item itemvalue="HTTP Request.generated-requests | #76" />
         <item itemvalue="HTTP Request.generated-requests | #77" />
         <item itemvalue="HTTP Request.generated-requests | #72" />
-        <item itemvalue="HTTP Request.generated-requests | #71" />
-        <item itemvalue="HTTP Request.generated-requests | #62" />
       </list>
     </recent_temporary>
   </component>
@@ -131,7 +129,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715463219798</updated>
-      <workItem from="1715463220890" duration="35962000" />
+      <workItem from="1715463220890" duration="41601000" />
     </task>
     <task id="LOCAL-00001" summary="new version">
       <option name="closed" value="true" />
@@ -149,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715542484254</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="new version">
+      <option name="closed" value="true" />
+      <created>1715771319706</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715771319706</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -186,7 +186,7 @@ public class AuthController {
       return ResponseEntity.notFound().build();
     }
   }
-/*
+
   @PutMapping("/{id}")
   public ResponseEntity<?> updateUser(@PathVariable Long id,
                                       @RequestParam(required = false) String username,
@@ -198,7 +198,7 @@ public class AuthController {
     if (userOptional.isPresent()) {
       User user = userOptional.get();
 
-      // Update username, email, and password if provided
+
       if (username != null) {
         user.setUsername(username);
       }
@@ -206,10 +206,10 @@ public class AuthController {
         user.setEmail(email);
       }
       if (password != null) {
-        user.setPassword(Encoder.encode(password));
+        user.setPassword(encoder.encode(password));
       }
 
-      // Update roles if provided
+
       if (roles != null) {
         Set<Role> updatedRoles = new HashSet<>();
         for (String roleName : roles) {
@@ -219,10 +219,9 @@ public class AuthController {
         user.setRoles(updatedRoles);
       }
 
-      // Handle image upload if provided
       if (imageFile != null && !imageFile.isEmpty()) {
         try {
-          String fileName = StringUtils.cleanPath(imageFile.getOriginalFilename());
+          String fileName = StringUtils.cleanPath(Objects.requireNonNull(imageFile.getOriginalFilename()));
           Image image = new Image(fileName, imageFile.getBytes());
           Image savedImage = imageRepository.save(image);
           user.setImage(savedImage);
@@ -239,7 +238,8 @@ public class AuthController {
     } else {
       return ResponseEntity.notFound().build();
     }
-  }*/
+  }
+
 
   @PostMapping("/update/{id}")
   public ResponseEntity<?> updateUser(@PathVariable("id") Long id,
@@ -252,47 +252,52 @@ public class AuthController {
 
     User user = userOptional.get();
 
-    // Update username if provided and not taken by another user
-    if (updateRequest.getUsername() != null && !updateRequest.getUsername().isEmpty()
-            && !user.getUsername().equals(updateRequest.getUsername())
-            && userRepository.existsByUsername(updateRequest.getUsername())) {
-      return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
-    }
-
-    // Update email if provided and not already in use by another user
-    if (updateRequest.getEmail() != null && !updateRequest.getEmail().isEmpty()
-            && !user.getEmail().equals(updateRequest.getEmail())
-            && userRepository.existsByEmail(updateRequest.getEmail())) {
-      return ResponseEntity.badRequest().body(new MessageResponse("Error: Email is already in use!"));
-    }
-
     try {
       // Update profile image if provided
-      Image savedImage = null;
-      if (imageFile != null) {
+      if (imageFile != null && !imageFile.isEmpty()) {
         String fileName = StringUtils.cleanPath(Objects.requireNonNull(imageFile.getOriginalFilename()));
-        Image image = new Image(fileName, imageFile.getBytes());
-        savedImage = imageRepository.save(image);
-        // Remove old image if exists
+        Image newImage = new Image(fileName, imageFile.getBytes());
+        Image savedImage = imageRepository.save(newImage);
+
+        // Remove old image if it exists
         if (user.getImage() != null) {
           imageRepository.delete(user.getImage());
         }
+
+        // Set new image to user
+        user.setImage(savedImage);
+        System.out.println("Image updated successfully: " + fileName);
       }
 
       // Update user's information
       if (updateRequest.getUsername() != null && !updateRequest.getUsername().isEmpty()) {
         user.setUsername(updateRequest.getUsername());
+        System.out.println("Username updated successfully: " + updateRequest.getUsername());
       }
       if (updateRequest.getEmail() != null && !updateRequest.getEmail().isEmpty()) {
         user.setEmail(updateRequest.getEmail());
+        System.out.println("Email updated successfully: " + updateRequest.getEmail());
       }
       if (updateRequest.getPassword() != null && !updateRequest.getPassword().isEmpty()) {
         user.setPassword(encoder.encode(updateRequest.getPassword()));
-      }
-      if (savedImage != null) {
-        user.setImage(savedImage);
+        System.out.println("Password updated successfully.");
       }
 
+      // Update roles if provided
+      if (updateRequest.getRoles() != null && !updateRequest.getRoles().isEmpty()) {
+        Set<Role> roles = new HashSet<>();
+        updateRequest.getRoles().forEach(roleName -> {
+          Role role = roleRepository.findByName(ERole.valueOf(roleName))
+                  .orElseThrow(() -> new RuntimeException("Error: Role not found."));
+          roles.add(role);
+        });
+
+        // Set new roles to user
+        user.setRoles(roles);
+        System.out.println("Roles updated successfully: " + updateRequest.getRoles());
+      }
+
+      // Save user
       userRepository.save(user);
 
       // Prepare response DTO
@@ -309,9 +314,6 @@ public class AuthController {
       return ResponseEntity.badRequest().body(new MessageResponse("Error: Failed to upload image!"));
     }
   }
-
-
-
 
   @DeleteMapping("/users/{id}")
     public ResponseEntity<?> deleteUserById(@PathVariable Long id) {
