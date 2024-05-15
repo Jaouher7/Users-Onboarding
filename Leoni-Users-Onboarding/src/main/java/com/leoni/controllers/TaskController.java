@@ -54,13 +54,13 @@ public class TaskController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody TaskDTO updatedTaskDTO) {
+    public ResponseEntity<TaskDTO> updateTask(@PathVariable Long id, @RequestBody TaskDTO updatedTaskDTO) {
         Optional<Task> existingTaskOptional = taskRepository.findById(id);
         if (existingTaskOptional.isPresent()) {
             Task existingTask = existingTaskOptional.get();
             Task updatedTaskEntity = updateTaskFromDTO(existingTask, updatedTaskDTO);
             taskRepository.save(updatedTaskEntity);
-            return ResponseEntity.ok(updatedTaskEntity);
+            return ResponseEntity.ok(convertToDTO(updatedTaskEntity));
         } else {
             return ResponseEntity.notFound().build();
         }

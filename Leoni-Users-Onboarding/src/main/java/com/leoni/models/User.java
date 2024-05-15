@@ -1,5 +1,7 @@
 package com.leoni.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -10,11 +12,12 @@ import java.util.Set;
 
 @Entity
 @Table(name = "users",
-    uniqueConstraints = { 
-      @UniqueConstraint(columnNames = "username"),
-      @UniqueConstraint(columnNames = "email") 
-    })
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "username"),
+                @UniqueConstraint(columnNames = "email")
+        })
 public class User {
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -33,27 +36,31 @@ public class User {
   private String password;
 
   @ManyToMany(fetch = FetchType.LAZY)
-  @JoinTable(  name = "user_role",
-        joinColumns = @JoinColumn(name = "user_id"),
-        inverseJoinColumns = @JoinColumn(name = "role_id"))
+  @JoinTable(name = "user_role",
+          joinColumns = @JoinColumn(name = "user_id"),
+          inverseJoinColumns = @JoinColumn(name = "role_id"))
   private Set<Role> roles = new HashSet<>();
 
-  @OneToOne(fetch = FetchType.LAZY)
-  @JoinTable(  name = "user_image",
+  @Transient
+  private byte[] imageBytes; // Renamed field
+
+  @JsonIgnore
+  @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+  @JoinTable(name = "user_image",
           joinColumns = @JoinColumn(name = "user_id"),
           inverseJoinColumns = @JoinColumn(name = "image_id"))
   private Image image;
-
-  @Transient
-  private byte[] imageData;
 
   public User(String username, String email, String password) {
     this.username = username;
     this.email = email;
     this.password = password;
   }
+
   public User() {
   }
+
+
   public Long getId() {
     return id;
   }
@@ -94,6 +101,13 @@ public class User {
     this.roles = roles;
   }
 
+  public byte[] getImageBytes() {
+    return imageBytes;
+  }
+
+  public void setImageBytes(byte[] imageBytes) {
+    this.imageBytes = imageBytes;
+  }
 
   public Image getImage() {
     return image;
@@ -102,13 +116,4 @@ public class User {
   public void setImage(Image image) {
     this.image = image;
   }
-
-  public byte[] getImageData() {
-    return imageData;
-  }
-
-  public void setImageData(byte[] imageData) {
-    this.imageData = imageData;
-  }
-
 }
