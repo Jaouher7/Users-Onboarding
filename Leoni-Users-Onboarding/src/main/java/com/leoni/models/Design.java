@@ -3,8 +3,12 @@ package com.leoni.models;
 import javax.persistence.*;
 import java.util.Date;
 
-@Table
+
 @Entity
+@Table(name = "design",
+        uniqueConstraints = {
+                @UniqueConstraint(columnNames = "designNbr")
+        })
 public class Design {
 
     @Id

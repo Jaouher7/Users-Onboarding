@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5a410185-eb86-43e0-889f-e0649ad056d3" name="Changes" comment="new version">
+    <list default="true" id="5a410185-eb86-43e0-889f-e0649ad056d3" name="Changes" comment="master">
+      <change afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/resources/Application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/resources/keystore.p12" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/controllers/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/controllers/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UpdateUserRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UpdateUserRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/payload/request/UserResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/models/Design.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/models/Design.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/security/jwt/AuthEntryPointJwt.java" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/java/com/leoni/security/jwt/AuthEntryPointJwt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Leoni-Users-Onboarding/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,61 +28,83 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="New-Version" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Jaouher7"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Jaouher7&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Jaouher7/Users-Onboarding",
-    "accountId": "ddb8a00b-e95d-433f-86ad-e18b2fa7cedf"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Jaouher7/Users-Onboarding&quot;,
+    &quot;accountId&quot;: &quot;ddb8a00b-e95d-433f-86ad-e18b2fa7cedf&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2gL3qFplbMzHFdvapfLMwjbynR0" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.generated-requests | #62.executor": "Run",
-    "HTTP Request.generated-requests | #71.executor": "Run",
-    "HTTP Request.generated-requests | #72.executor": "Run",
-    "HTTP Request.generated-requests | #76.executor": "Run",
-    "HTTP Request.generated-requests | #77.executor": "Run",
-    "HTTP Request.generated-requests | #84.executor": "Run",
-    "HTTP Request.generated-requests | #87.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.LeoniUsersOnboardingApplication.executor": "Run",
-    "git-widget-placeholder": "New-Version",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;HTTP Request.generated-requests | #62.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #71.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #72.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #76.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #77.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #84.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.generated-requests | #87.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Users-Onboarding [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.LeoniUsersOnboardingApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PFE2024\Leoni Users Onboarding\Leoni-Users-Onboarding\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+    </option>
+  </component>
   <component name="RunManager" selected="Spring Boot.LeoniUsersOnboardingApplication">
+    <configuration name="generated-requests | #62" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="62" requestIdentifier="#62" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="generated-requests | #71" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="71" requestIdentifier="#71" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="generated-requests | #72" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="72" requestIdentifier="#72" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -87,12 +112,6 @@
       <method v="2" />
     </configuration>
     <configuration name="generated-requests | #77" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="77" requestIdentifier="#77" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #84" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="84" requestIdentifier="#84" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="generated-requests | #87" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="87" requestIdentifier="#87" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="LeoniUsersOnboardingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -105,11 +124,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.generated-requests | #87" />
-        <item itemvalue="HTTP Request.generated-requests | #84" />
-        <item itemvalue="HTTP Request.generated-requests | #76" />
         <item itemvalue="HTTP Request.generated-requests | #77" />
+        <item itemvalue="HTTP Request.generated-requests | #76" />
         <item itemvalue="HTTP Request.generated-requests | #72" />
+        <item itemvalue="HTTP Request.generated-requests | #71" />
+        <item itemvalue="HTTP Request.generated-requests | #62" />
       </list>
     </recent_temporary>
   </component>
@@ -129,7 +148,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715463219798</updated>
-      <workItem from="1715463220890" duration="41601000" />
+      <workItem from="1715463220890" duration="43477000" />
+      <workItem from="1715778969862" duration="1245000" />
+      <workItem from="1716062052377" duration="5192000" />
+      <workItem from="1716293472057" duration="355000" />
+      <workItem from="1716487336346" duration="781000" />
+      <workItem from="1716588589332" duration="694000" />
+      <workItem from="1716811038693" duration="1627000" />
+      <workItem from="1716829276985" duration="2712000" />
+      <workItem from="1716834474853" duration="19000" />
+      <workItem from="1716834510580" duration="1952000" />
+      <workItem from="1716858742911" duration="430000" />
     </task>
     <task id="LOCAL-00001" summary="new version">
       <option name="closed" value="true" />
@@ -155,14 +184,27 @@
       <option name="project" value="LOCAL" />
       <updated>1715771319706</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="master">
+      <option name="closed" value="true" />
+      <created>1715776610076</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715776610076</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.p12" />
+  </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="new version" />
-    <option name="LAST_COMMIT_MESSAGE" value="new version" />
+    <MESSAGE value="master" />
+    <option name="LAST_COMMIT_MESSAGE" value="master" />
   </component>
 </project>
